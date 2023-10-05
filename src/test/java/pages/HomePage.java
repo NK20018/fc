@@ -33,6 +33,22 @@ public class HomePage extends BasePage {
 
     private static final String BUTTON_EXIT = "//a[@class=\"help2\"]/*/*";
 
+    private static final String REGION_BUTTON = "//div[@class=\"header_action_change-city\"]";
+
+    private static final String CHANGE_COUNTRY = "//div[@class=\"lf-text\"]";
+
+    private static final String POLAND_BUTTON = "//a[@class=\"option\"]//span[@class=\"flag-pl ib\"]";
+
+    private static final String CHANGE_COUNTRY_POLAND_REGION = "//div[@class=\"header_action_change-city\"]";
+
+    private static final String INPUT_CHANGE_CITY = "//input[@class=\"ek-form-control rs-inp\"]";
+
+    private static final String WARSZAWA_BUTTON = "//td[@class=\"city\"]";
+
+    private static final String WARSZAWA_TEXT = "//div[@class=\"ib h\"]/em[@id=\"hikg93bgcnx\"]";
+
+    private static final String POL_TEXT = "//a[text()=\"Pol\"]";
+
     public HomePage clickLogIn() {
         waitUntilElementToBeClickable(LOG_IN).click();
         return this;
@@ -80,5 +96,44 @@ public class HomePage extends BasePage {
     public boolean buttonIsDisplayed() {
         return waitUntilVisibilityOfElement(BUTTON_EXIT).isDisplayed();
     }
+
+    public HomePage clickChangeButton() {
+        waitUntilElementToBeClickable(REGION_BUTTON).click();
+        return this;
+    }
+
+    public HomePage clickChangeCountry() {
+        waitUntilElementToBeClickable(CHANGE_COUNTRY).click();
+        return this;
+    }
+
+    public HomePage clickPolandButton() {
+        waitUntilElementToBeClickable(POLAND_BUTTON).click();
+        return this;
+    }
+
+    public HomePage clickChangeRegionPolandRegion() {
+        waitUntilElementToBeClickable(CHANGE_COUNTRY_POLAND_REGION).click();
+        return this;
+    }
+
+    public HomePage inputChangeCity(String inputCity) {
+        waitUntilElementToBeClickable(INPUT_CHANGE_CITY).sendKeys(inputCity);
+        return this;
+    }
+
+    public HomePage clickWarButton() {
+        waitUntilElementToBeClickable(WARSZAWA_BUTTON).click();
+        return this;
+    }
+
+    public boolean warzawaIsDisplayed(){
+        return waitUntilVisibilityOfElement(WARSZAWA_BUTTON).isDisplayed();
+    }
+
+    public boolean polIsDisplayed(){
+        return waitUntilVisibilityOfElement(POL_TEXT).isDisplayed();
+    }
+
 
 }
