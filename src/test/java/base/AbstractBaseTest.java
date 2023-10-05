@@ -23,7 +23,7 @@ abstract public class AbstractBaseTest {
     @AfterMethod
     public void closeBrowser() {
         //log.info("<<<=== Teardown");
-        driver.quit();
+        //driver.quit();
     }
 
     public static void sleep(int seconds) {
